@@ -1,4 +1,5 @@
-import {BeforeInsert, Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { UserRole } from './user.interface';
 
 @Entity()
 export class UserEntity {
@@ -10,6 +11,9 @@ export class UserEntity {
 
   @Column()
   password: string;
+
+  @Column({ type: 'enum', enum: UserRole, default: UserRole.USER })
+  role: UserRole;
 
   @BeforeInsert()
   emailToLowerCase() {
