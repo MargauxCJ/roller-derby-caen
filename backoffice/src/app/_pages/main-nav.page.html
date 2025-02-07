@@ -1,0 +1,70 @@
+<ion-split-pane contentId="main-content" style="background-color: #FCFCFC">
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-content color="menu-background">
+      <ion-list id="inbox-list">
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-note>Général</ion-note>
+          <ion-item routerDirection="root" [routerLink]="'general/dashboard'" lines="full" detail="false" routerLinkActive="selected">
+            <ion-icon name="grid-outline" class="menu-icon-start"></ion-icon>
+            <ion-label>Tableau de bord</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+          </ion-item>
+
+          <div class="menu-item-divider"></div>
+
+          <ion-note>Articles</ion-note>
+          <ion-item routerDirection="root" [routerLink]="'articles/events'" lines="none" detail="false" routerLinkActive="selected">
+            <ion-icon name="calendar-outline" class="menu-icon-start"></ion-icon>
+            <ion-label>{{"évènements"|titlecase}}</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+          </ion-item>
+
+          <div class="menu-item-divider"></div>
+
+          <ion-note>Photos</ion-note>
+          <ion-item routerDirection="root" [routerLink]="'photos/albums'" lines="none" detail="false" routerLinkActive="selected">
+            <ion-icon name="images-outline" class="menu-icon-start"></ion-icon>
+            <ion-label>{{"albums"|titlecase}}</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+          </ion-item>
+
+          <div class="menu-item-divider"></div>
+
+          <ion-note>Membres</ion-note>
+          <ion-item routerDirection="root" [routerLink]="'members/teams'" lines="none" detail="false" routerLinkActive="selected">
+            <ion-icon name="medal-outline" class="menu-icon-start"></ion-icon>
+            <ion-label>{{"équipes"|titlecase}}</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+          </ion-item>
+          <ion-item routerDirection="root" [routerLink]="'members/skaters'" lines="none" detail="false" routerLinkActive="selected">
+            <ion-icon name="walk-outline" class="menu-icon-start"></ion-icon>
+            <ion-label>{{"skaters"|titlecase}}</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+          </ion-item>
+          <ion-item routerDirection="root" [routerLink]="'members/staffs'" lines="none" detail="false" routerLinkActive="selected">
+            <ion-icon name="people-circle-outline" class="menu-icon-start"></ion-icon>
+            <ion-label>{{"Staffs"|titlecase}}</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+          </ion-item>
+
+          <div class="menu-item-divider"></div>
+
+          <ion-note>Paramètres</ion-note>
+          <ion-item routerDirection="root" [routerLink]="'account'" lines="none" detail="false" routerLinkActive="selected">
+            <ion-icon name="settings-outline" class="menu-icon-start"></ion-icon>
+            <ion-label>{{"compte"|titlecase}}</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+          </ion-item>
+          <ion-item routerDirection="root" lines="none" detail="false" routerLinkActive="selected">
+            <ion-icon name="power-outline" class="menu-icon-start"></ion-icon>
+            <ion-label>{{"déconnexion"|titlecase}}</ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline" class="menu-chevron"></ion-icon>
+          </ion-item>
+        </ion-menu-toggle>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-split-pane>

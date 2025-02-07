@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true">
+  <div class="login-container">
+    <ion-card class="login-card">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="d-flex ion-justify-content-center">
+            <h2>Connexion</h2>
+          </ion-col>
+        </ion-row>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <ion-row>
+
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="d-flex ion-justify-content-center">
+              <ion-input label="Mot de passe" label-placement="floating" fill="outline" placeholder="Mot de passe" formControlName="password" required></ion-input>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="d-flex ion-justify-content-center">
+              <ion-button>Connexion</ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

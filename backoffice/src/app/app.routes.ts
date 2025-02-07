@@ -1,14 +1,17 @@
-import { Routes } from '@angular/router';
+import {Route} from '@angular/router';
 
-export const routes: Routes = [
+export const routes: Route[] = [
   {
     path: '',
-    redirectTo: 'folder/inbox',
     pathMatch: 'full',
+    redirectTo: 'login',
   },
   {
-    path: 'folder/:id',
-    loadComponent: () =>
-      import('./folder/folder.page').then((m) => m.FolderPage),
+    path: '',
+    loadChildren: () => import('./_pages/main-nav.routes').then((m) => m.routes),
   },
-];
+  {
+    path: 'login',
+    loadComponent: () => import('./_auth/login/login.page').then( m => m.LoginPage)
+  },
+]
