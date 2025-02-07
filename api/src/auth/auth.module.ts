@@ -1,11 +1,11 @@
-import {forwardRef, Module} from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthService } from './services/auth.service';
-import {RolesGuard} from './guards/roles.guard';
-import {JwtAuthGuard} from './guards/jwt-auth.guard';
-import {JwtStrategy} from './guards/jwt-strategy';
-import {UserModule} from '../user/user.module';
+import { RolesGuard } from './guards/roles.guard';
+import { JwtAuthGuard } from './guards/jwt-auth.guard';
+import { JwtStrategy } from './guards/jwt-strategy';
+import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [

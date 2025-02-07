@@ -11,7 +11,7 @@ import {
   IonRouterOutlet,
   IonSplitPane
 } from '@ionic/angular/standalone';
-import {RouterLink, RouterLinkActive} from '@angular/router';
+import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {addIcons} from 'ionicons';
 import {
   calendarOutline,
@@ -25,6 +25,7 @@ import {
   trashOutline,
   walkOutline
 } from 'ionicons/icons';
+import {AuthService} from '../_services/auth.service';
 
 @Component({
   selector: 'app-main-nav',
@@ -35,9 +36,13 @@ import {
 })
 export class MainNavPage {
 
-  constructor() {
+  constructor(private authService: AuthService, private router: Router) {
     addIcons({ trashOutline, chevronForwardOutline, gridOutline, calendarOutline, imagesOutline, medalOutline, walkOutline, peopleCircleOutline, settingsOutline, powerOutline});
   }
 
+  public logout(){
+    this.authService.logout();
+    this.router.navigateByUrl('login');
+  }
 
 }

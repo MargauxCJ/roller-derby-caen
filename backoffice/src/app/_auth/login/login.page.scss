@@ -13,5 +13,7 @@
 }
 
 ion-input {
-  width: 75%;
+  width: 50%;
+  margin-bottom: 16px;
+  --highlight-color-valid: var(--ion-color-primary);
 }

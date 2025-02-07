@@ -2,26 +2,30 @@
   <div class="login-container">
     <ion-card class="login-card">
       <ion-grid>
-        <ion-row>
+        <ion-row class="margin-large-bottom">
           <ion-col class="d-flex ion-justify-content-center">
-            <h2>Connexion</h2>
+            <ion-img src="../../assets/logos/logo-red.png" style="width: 20em"></ion-img>
           </ion-col>
         </ion-row>
 
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <ion-row>
-
-          </ion-row>
-
-          <ion-row>
             <ion-col class="d-flex ion-justify-content-center">
-              <ion-input label="Mot de passe" label-placement="floating" fill="outline" placeholder="Mot de passe" formControlName="password" required></ion-input>
+              <ion-input label="Email" label-placement="floating" fill="outline" placeholder="Email"
+                         formControlName="email" required error-text="invalide"></ion-input>
             </ion-col>
           </ion-row>
 
           <ion-row>
             <ion-col class="d-flex ion-justify-content-center">
-              <ion-button>Connexion</ion-button>
+              <ion-input label="Mot de passe" label-placement="floating" fill="outline" placeholder="Mot de passe"
+                         formControlName="password" required error-text="invalide"></ion-input>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="margin-medium-top">
+            <ion-col class="d-flex ion-justify-content-center">
+              <ion-button mode="ios" type="submit">Connexion</ion-button>
             </ion-col>
           </ion-row>
         </form>
